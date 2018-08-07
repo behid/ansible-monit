@@ -6,4 +6,4 @@ monit_idfile: /var/lib/monit/id
 monit_statefile: /var/lib/monit/state
 
 monit_services: []
-monit_services_delete_unlisted: false
+monit_services_delete: []
