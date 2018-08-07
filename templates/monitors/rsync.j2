@@ -1,0 +1,5 @@
+check process rsync with pidfile /var/run/rsyncd.pid
+  start program = "/usr/sbin/service rsync start"
+  stop program = "/usr/sbin/service rsync stop"
+  if failed host 127.0.0.1 port 873 type tcp then restart
+  if 5 restarts within 5 cycles then timeout
