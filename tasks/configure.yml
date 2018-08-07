@@ -1,0 +1,10 @@
+---
+
+- name: Generate monitrc
+  template: 
+    src: defaults/monitrc.j2
+    dest: /etc/monit/monitrc
+    backup: yes
+    owner: root
+    group: root
+  notify: restart monit

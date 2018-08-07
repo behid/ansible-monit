@@ -1,0 +1,7 @@
+---
+
+- import_tasks: install.yml
+  tags: [monit, monit_install]
+
+- import_tasks: configure.yml
+  tags: [monit, monit_configure]
