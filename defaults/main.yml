@@ -1,0 +1,9 @@
+---
+
+monit_daemon_interval: 120
+monit_log_file: /var/log/monit.log
+monit_idfile: /var/lib/monit/id
+monit_statefile: /var/lib/monit/state
+
+monit_services: []
+monit_services_delete_unlisted: false
