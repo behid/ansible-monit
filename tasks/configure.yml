@@ -8,3 +8,19 @@
     owner: root
     group: root
   notify: restart monit
+
+- name: Generate monitors file(s)
+  template: 
+    src: monitors/{{ item }}.j2
+    dest: /etc/monit/conf.d/{{ item }} 
+    owner: root
+    group: root
+  with_items: "{{ monit_services }}"
+  notify: restart monit
+
+- name: Remove monitors listed for deletion
+  file: 
+    path: /etc/monit/conf.d/{{ item }} 
+    state: absent
+  with_items: "{{ monit_services_delete }}"
+  notify: restart monit
